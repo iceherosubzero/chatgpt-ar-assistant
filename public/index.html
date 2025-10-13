@@ -22,7 +22,7 @@ body, html { margin: 0; overflow: hidden; }
 </head>
 <body>
 
-<a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;" vr-mode-ui="enabled: false" renderer="antialias: true;">
+<a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;" vr-mode-ui="enabled: false" renderer="antialias: true;" xr-mode-ui="enabled: false">
   
   <!-- 3D Car -->
   <a-entity gltf-model="./car_model.glb" position="0 -10 2" scale="10 10 10"></a-entity>
@@ -142,6 +142,7 @@ document.querySelectorAll(".clickable").forEach(el=>{
 
 </body>
 </html>
+
 
 
 
