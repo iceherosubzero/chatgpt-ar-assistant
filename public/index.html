@@ -138,8 +138,9 @@ if(SpeechRecognition){
 
 // Hotspot clicks
 document.querySelectorAll(".clickable").forEach(el=>{
-  console.log(el);
-  console.log(el+" clicked---");
+  //console.log(el);
+  //console.log(el+" clicked---");
+  console.log(el.dataset.question);
   el.addEventListener("click",()=> handleQuestion(el.dataset.question));
 });
 
@@ -152,6 +153,7 @@ document.querySelectorAll(".clickable").forEach(el=>{
 
 </body>
 </html>
+
 
 
 
