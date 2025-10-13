@@ -145,9 +145,9 @@ if(SpeechRecognition){
   //el.addEventListener("click",()=> handleQuestion(el.dataset.question));
 //});
 
-wheelhotspot.addEventListener("click",()=> handleQuestion(this.dataset.question));
-enginehotspot.addEventListener("click",()=> handleQuestion(this.dataset.question));
-interiorhotspot.addEventListener("click",()=> handleQuestion(this.dataset.question));
+wheelhotspot.addEventListener("click",()=> handleQuestion(wheelhotspot.dataset.question));
+enginehotspot.addEventListener("click",()=> handleQuestion(enginehotspot.dataset.question));
+interiorhotspot.addEventListener("click",()=> handleQuestion(interiorhotspot.dataset.question));
   
 // Optional hover glow for desktop
 document.querySelectorAll(".clickable").forEach(el=>{
@@ -158,6 +158,7 @@ document.querySelectorAll(".clickable").forEach(el=>{
 
 </body>
 </html>
+
 
 
 
