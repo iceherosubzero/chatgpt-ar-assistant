@@ -153,6 +153,13 @@ talkBtn.addEventListener('click', ()=> recognition.start());
 talkBtn.disabled = true; talkBtn.textContent = '❌ No mic support';
 }
 
+  // Send button
+sendBtn.onclick = () => {
+  const q=promptInput.value.trim();
+  promptInput.value="";
+  handleQuestion(q);
+};
+
 
 // Hotspot clicks
 document.querySelectorAll('.clickable').forEach(el => {
@@ -164,6 +171,7 @@ el.addEventListener('mouseleave', ()=> el.setAttribute('material', 'emissiveInte
 </script>
 </body>
 </html>
+
 
 
 
