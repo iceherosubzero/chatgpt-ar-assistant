@@ -123,6 +123,7 @@ replyText.setAttribute('value','🤔 Thinking...');
 try{
 const res = await fetch('/api/chat',{ method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ prompt: question }) });
 const data = await res.json();
+  console.log("data "+data);
 const answer = data.answer || '🤖 Sorry, I do not know.';
 const emotion = data.emotion || 'curious';
 replyText.setAttribute('value', answer);
@@ -163,6 +164,7 @@ el.addEventListener('mouseleave', ()=> el.setAttribute('material', 'emissiveInte
 </script>
 </body>
 </html>
+
 
 
 
