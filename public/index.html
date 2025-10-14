@@ -138,14 +138,31 @@ setStatus('Error');
 }
 
 
-// Text send button
-sendBtn.addEventListener('click', ()=>{ const q = promptInput.value.trim(); promptInput.value=''; handleQuestion(q); });
-
-
 // Voice
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-</html>
+if(SpeechRecognition){
+const recognition = new SpeechRecognition();
+recognition.lang = 'en-US';
+recognition.interimResults = false;
+recognition.onstart = ()=>{ talkBtn.classList.add('listening'); talkBtn.textContent='🎙️ Listening...'; };
+recognition.onend = ()=>{ talkBtn.classList.remove('listening'); talkBtn.textContent='🎤'; };
+recognition.onresult = (e)=>{ const q = e.results[0][0].transcript; promptInput.value = q; handleQuestion(q); };
+talkBtn.addEventListener('click', ()=> recognition.start());
+} else {
+talkBtn.disabled = true; talkBtn.textContent = '❌ No mic support';
+}
 
+
+// Hotspot clicks
+document.querySelectorAll('.clickable').forEach(el => {
+el.addEventListener('click', ()=> handleQuestion(el.dataset.question));
+// hover glow for desktop
+el.addEventListener('mouseenter', ()=> el.setAttribute('material', 'emissiveIntensity:1.5'));
+el.addEventListener('mouseleave', ()=> el.setAttribute('material', 'emissiveIntensity:0.8'));
+});
+</script>
+</body>
+</html>
 
 
 
