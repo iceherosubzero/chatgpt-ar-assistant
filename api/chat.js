@@ -1,4 +1,4 @@
-import express from "express";
+/*import express from "express";
 import fetch from "node-fetch";
 const app = express();
 app.use(express.json());
@@ -48,12 +48,12 @@ app.post("/api/chat", async (req, res) => {
 });
 
 app.listen(3000, () => console.log("Server running on port 3000"));
-
+*/
 
 
 
 // api/chat.js
-/*export default async function handler(req, res) {
+export default async function handler(req, res) {
 try {
 const prompt = req.body?.prompt;
 if (!prompt) return res.status(400).json({ error: "Missing prompt" });
@@ -122,7 +122,7 @@ console.error('Error in /api/chat:', err);
 res.status(500).json({ answer: 'Internal server error', emotion: 'sad' });
 }
 }
-*/
+
 /*
 export default async function handler(req, res) {
   try {
@@ -170,6 +170,7 @@ export default async function handler(req, res) {
   }
 }
 */
+
 
 
 
