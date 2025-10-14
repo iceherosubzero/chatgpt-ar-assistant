@@ -21,7 +21,7 @@ export default async function handler(req, res) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "gpt-5",
+        model: "gpt-4.1",
         messages: [
           { role: "system", content: context },
           { role: "user", content: prompt }
@@ -43,3 +43,4 @@ export default async function handler(req, res) {
     res.status(500).json({ answer: "Internal server error", emotion: "sad" });
   }
 }
+
