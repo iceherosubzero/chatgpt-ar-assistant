@@ -34,12 +34,11 @@ body, html { margin: 0; height: 100%; overflow: hidden; font-family: Arial, sans
 
 
 <div id="status">AR Car Showroom</div>
-
-
-<a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;" vr-mode-ui="enabled: false" renderer="antialias: true;">
+  
+<a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;" renderer="antialias: true;" vr-mode-ui="enabled: false" xr-mode-ui="enabled: false" cursor="rayOrigin: mouse">
+   
 <!-- 3D Car model (place car_model.glb in public/) -->
 <a-entity id="car" gltf-model="./car_model.glb" position="0 0 -2" scale="0.6 0.6 0.6"></a-entity>
-
 
 <!-- AI Orb assistant -->
 <a-entity id="assistant" position="1 0 -2">
@@ -143,4 +142,5 @@ sendBtn.addEventListener('click', ()=>{ const q = promptInput.value.trim(); prom
 // Voice
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 </html>
+
 
